@@ -1,0 +1,72 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+form {
+  display: flex;
+  place-content: center;
+}
+
+.movies {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+}
+
+.movie {
+  text-align: center;
+}
+
+.movie h3,
+.movie p {
+  margin: 0;
+}
+
+.movie img {
+  border-radius: 8px;
+  margin-top: 16px;
+}
+
+/* is loader */
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  box-shadow: 0 0 0 3px #fff inset;
+  border-radius: 50%;
+  position: relative;
+  animation: l11 7s infinite;
+}
+.loader:before,
+.loader:after {
+  content: '';
+  position: absolute;
+  top: calc(100% + 3px);
+  left: calc(50% - 12.5px);
+  box-shadow: inherit;
+  width: 25px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  transform-origin: 50% -28px;
+  animation: l11 1.5s infinite;
+}
+.loader:after {
+  animation-delay: -0.75s;
+}
+@keyframes l11 {
+  100% {
+    transform: rotate(360deg);
+  }
+}
